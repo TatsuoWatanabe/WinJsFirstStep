@@ -1,4 +1,4 @@
-﻿/// <reference path="js/typings/tsd.d.ts" />
+﻿/// <reference path="typings/tsd.d.ts" />
 
 $(() => {
     // WinJS.UI.Rating

@@ -17,7 +17,6 @@
     <IISExpressUseClassicPipelineMode />
   </PropertyGroup>
   <ItemGroup>
-    <Content Include="app.css" />
     <Content Include="index.html" />
     <Content Include="js\lib\jquery.js" />
     <Content Include="js\Microsoft.WinJS.3.0\css\ui-dark.css" />
@@ -29,7 +28,7 @@
     <Content Include="web.config" />
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Include="app.ts" />
+    <TypeScriptCompile Include="js\app.ts" />
     <TypeScriptCompile Include="js\typings\tsd.d.ts" />
     <TypeScriptCompile Include="js\typings\winjs\jquery.d.ts" />
     <TypeScriptCompile Include="js\typings\winjs\winjs.d.ts" />
@@ -37,6 +36,7 @@
   <ItemGroup>
     <Content Include="packages.config" />
     <Content Include="js\Microsoft.WinJS.3.0\fonts\Symbols.ttf" />
+    <Content Include="README.md" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
     </None>
