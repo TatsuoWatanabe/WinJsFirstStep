@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Welcome to WinJs!</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" media="screen" href="Microsoft.WinJS.2.1/css/ui-dark.css" />
+        @RenderSection("css", false)
+        
+    </head>
+    
+    <body>
+        @RenderSection("templates", false)    
+       	@RenderBody()
+        <script src="Microsoft.WinJS.2.1/js/base.js"></script>
+        <script src="Microsoft.WinJS.2.1/js/ui.js"></script>
+        <script src="http://ajax.aspnetcdn.com/ajax/mobileservices/MobileServices.Web-1.1.3.min.js"></script>
+        @RenderSection("scripts", false)
+    </body>
+</html>

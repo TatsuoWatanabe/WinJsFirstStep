@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>TypeScript HTML App</title>
+    <link href="js/Microsoft.WinJS.3.0/css/ui-dark.css" rel="stylesheet" />
+    <script src="js/Microsoft.WinJS.3.0/js/base.js"></script>
+    <script src="js/Microsoft.WinJS.3.0/js/ui.js"></script>
+    <script src="js/lib/jquery.js"></script>
+    <script src="app.js"></script>
+</head>
+<body>
+    <h1>TypeScript HTML App</h1>
+
+    <h2>WinJS.UI.Rating</h2>
+    <div id="ratingCtrl"
+         data-win-control="WinJS.UI.Rating"
+         data-win-options="{maxRating:10, averageRating:5}">
+    </div>
+
+    <h2>WinJS.UI.Bindings</h2>
+    <label><input id="bindColor" placeholder="backgroundColor" /></label>
+    <a id="myBlogLink"
+       data-win-bind="
+           innerHTML            : pageTitle;
+           href                 : url;
+           title                : description;
+           style.fontSize       : fontSize;
+           style.color          : fontColor;
+           style.backgroundColor: backgroundColor;
+       "
+     >TEST
+     </a>
+
+</body>
+</html>
