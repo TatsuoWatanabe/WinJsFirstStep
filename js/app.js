@@ -1,12 +1,5 @@
 ﻿/// <reference path="typings/tsd.d.ts" />
 $(function () {
-    // WinJS.UI.Rating
-    WinJS.UI.processAll().done(function () {
-        $('#ratingCtrl').on('change', function () {
-            console.log(this.winControl.userRating);
-        });
-    });
-
     // WinJS.UI.Bindings
     (function () {
         var myBlogsData = {
@@ -30,6 +23,36 @@ $(function () {
 
     // WinJS.UI.ListView
     (function () {
+        var itemArray = [
+            { title: 'Marvelous Mint', text: 'Gelato', picture: '/images/fruits/60Mint.png' },
+            { title: 'Succulent Strawberry', text: 'Sorbet', picture: '/images/fruits/60Strawberry.png' },
+            { title: 'Banana Blast', text: 'Low-fat frozen yogurt', picture: '/images/fruits/60Banana.png' },
+            { title: 'Lavish Lemon Ice', text: 'Sorbet', picture: '/images/fruits/60Lemon.png' },
+            { title: 'Creamy Orange', text: 'Sorbet', picture: '/images/fruits/60Orange.png' },
+            { title: 'Very Vanilla', text: 'Ice Cream', picture: '/images/fruits/60Vanilla.png' },
+            { title: 'Banana Blast', text: 'Low-fat frozen yogurt', picture: '/images/fruits/60Banana.png' },
+            { title: 'Lavish Lemon Ice', text: 'Sorbet', picture: '/images/fruits/60Lemon.png' }
+        ];
+
+        var items = [];
+
+        while (items.length < 160) {
+            itemArray.forEach(function (item) {
+                return items.push(item);
+            });
+        }
+
+        WinJS.Namespace.define('Sample.ListView', {
+            data: new WinJS.Binding.List(items)
+        });
+    })();
+
+    // WinJS.UI.processAll
+    WinJS.UI.processAll().done(function () {
+        // WinJS.UI.Rating
+        $('#ratingCtrl').on('change', function () {
+            console.log(this.winControl.userRating);
+        });
     });
 });
 //# sourceMappingURL=app.js.map

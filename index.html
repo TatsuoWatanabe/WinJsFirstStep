@@ -51,6 +51,7 @@
                     <div class="smallListIconTextItem-Detail">
                         <h4 data-win-bind="textContent: title"></h4>
                         <h6 data-win-bind="textContent: text"></h6>
+                        <h6 data-win-bind="textContent: picture"></h6>
                     </div>
                 </div>
             </div>
@@ -62,11 +63,11 @@
                  data-win-control="WinJS.UI.ListView"
                  data-win-options="{
                     itemDataSource: Sample.ListView.data.dataSource,
-                    itemTemplate: select('.smallListIconTextTemplate'),
-                    selectionMode: 'none',
-                    tapBehavior: 'none',
-                    swipeBehavior: 'none',
-                    layout: { type: WinJS.UI.ListLayout }
+                    itemTemplate  : select('.smallListIconTextTemplate'),
+                    selectionMode : 'none',
+                    tapBehavior   : 'none',
+                    swipeBehavior : 'none',
+                    layout        : { type: WinJS.UI.ListLayout }
                  }"
             ></div>
 

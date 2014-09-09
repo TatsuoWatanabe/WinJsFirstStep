@@ -1,13 +1,6 @@
 ﻿/// <reference path="typings/tsd.d.ts" />
-
-$(() => {
-    // WinJS.UI.Rating
-    WinJS.UI.processAll().done(() => {
-        $('#ratingCtrl').on('change', function() {
-            console.log(this.winControl.userRating);
-        });
-    });
-    
+declare var Sample: any;
+$(() => {    
     // WinJS.UI.Bindings
     (() => {
         var myBlogsData = {
@@ -31,6 +24,36 @@ $(() => {
 
     // WinJS.UI.ListView
     (() => {
+        var itemArray = [
+            { title: 'Marvelous Mint',       text: 'Gelato', picture: '/images/fruits/60Mint.png' },
+            { title: 'Succulent Strawberry', text: 'Sorbet', picture: '/images/fruits/60Strawberry.png' },
+            { title: 'Banana Blast',         text: 'Low-fat frozen yogurt', picture: '/images/fruits/60Banana.png' },
+            { title: 'Lavish Lemon Ice',     text: 'Sorbet', picture: '/images/fruits/60Lemon.png' },
+            { title: 'Creamy Orange',        text: 'Sorbet', picture: '/images/fruits/60Orange.png' },
+            { title: 'Very Vanilla',         text: 'Ice Cream', picture: '/images/fruits/60Vanilla.png' },
+            { title: 'Banana Blast',         text: 'Low-fat frozen yogurt', picture: '/images/fruits/60Banana.png' },
+            { title: 'Lavish Lemon Ice',     text: 'Sorbet', picture: '/images/fruits/60Lemon.png' }
+        ];
+
+        var items = [];
+
+        // Generate 160 items
+        while (items.length < 160) {
+            itemArray.forEach((item) => items.push(item));
+        }
+
+        WinJS.Namespace.define('Sample.ListView', {
+            data: new WinJS.Binding.List(items)
+        });
+    })();
+
+    // WinJS.UI.processAll
+    WinJS.UI.processAll().done(() => {
+
+        // WinJS.UI.Rating
+        $('#ratingCtrl').on('change', function() {
+            console.log(this.winControl.userRating);
+        });
 
     });
 });
