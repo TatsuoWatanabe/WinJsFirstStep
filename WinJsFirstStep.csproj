@@ -17,6 +17,7 @@
     <IISExpressUseClassicPipelineMode />
   </PropertyGroup>
   <ItemGroup>
+    <Content Include="css\app.css" />
     <Content Include="index.html" />
     <Content Include="js\lib\jquery.js" />
     <Content Include="js\Microsoft.WinJS.3.0\css\ui-dark.css" />

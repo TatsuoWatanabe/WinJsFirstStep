@@ -9,29 +9,69 @@
     <script src="js/Microsoft.WinJS.3.0/js/ui.js"></script>
     <script src="js/lib/jquery.js"></script>
     <script src="js/app.js"></script>
+    <style>
+        section { margin: 15px; }
+        article { margin-top: 1em; }
+    </style>
+    <link href="css/app.css" rel="stylesheet" />
 </head>
 <body>
-    <h1>WinJsFirstStep</h1>
+    <section style="margin:15px">
+        <h1>WinJsFirstStep</h1>
 
-    <h2>WinJS.UI.Rating</h2>
-    <div id="ratingCtrl"
-         data-win-control="WinJS.UI.Rating"
-         data-win-options="{maxRating:10, averageRating:5}">
-    </div>
+        <article>
+            <h2>WinJS.UI.Rating</h2>
+            <div id="ratingCtrl"
+                 data-win-control="WinJS.UI.Rating"
+                 data-win-options="{maxRating:10, averageRating:5}">
+            </div>
+        </article>
 
-    <h2>WinJS.UI.Bindings</h2>
-    <label><input id="bindColor" placeholder="backgroundColor" /></label>
-    <a id="myBlogLink"
-       data-win-bind="
-           innerHTML            : pageTitle;
-           href                 : url;
-           title                : description;
-           style.fontSize       : fontSize;
-           style.color          : fontColor;
-           style.backgroundColor: backgroundColor;
-       "
-     >TEST
-     </a>
+        <article>
+            <h2>WinJS.UI.Bindings</h2>
+            <label><input id="bindColor" placeholder="backgroundColor" /></label>
+            <a id="myBlogLink"
+               data-win-bind="
+                   innerHTML            : pageTitle;
+                   href                 : url;
+                   title                : description;
+                   style.fontSize       : fontSize;
+                   style.color          : fontColor;
+                   style.backgroundColor: backgroundColor;
+            "></a>
+        </article>
 
+        <article>
+            <h2>WinJS.UI.ListView</h2>
+
+            <!-- Simple template for the ListView instantiation  -->
+            <div class="smallListIconTextTemplate" data-win-control="WinJS.Binding.Template" style="display: none">
+                <div class="smallListIconTextItem">
+                    <img src="#" class="smallListIconTextItem-Image" data-win-bind="src: picture" />
+                    <div class="smallListIconTextItem-Detail">
+                        <h4 data-win-bind="textContent: title"></h4>
+                        <h6 data-win-bind="textContent: text"></h6>
+                    </div>
+                </div>
+            </div>
+
+            <!-- The declarative markup necesary for ListView instantiation -->
+            <!-- Call WinJS.UI.processAll() in your initialization code -->
+            <div id="listView"
+                 class="win-selectionstylefilled"
+                 data-win-control="WinJS.UI.ListView"
+                 data-win-options="{
+                    itemDataSource: Sample.ListView.data.dataSource,
+                    itemTemplate: select('.smallListIconTextTemplate'),
+                    selectionMode: 'none',
+                    tapBehavior: 'none',
+                    swipeBehavior: 'none',
+                    layout: { type: WinJS.UI.ListLayout }
+                 }"
+            ></div>
+
+        </article>
+
+    </section>
 </body>
 </html>

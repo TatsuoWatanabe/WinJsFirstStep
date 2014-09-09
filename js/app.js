@@ -27,5 +27,9 @@ $(function () {
         });
         dataBind();
     })();
+
+    // WinJS.UI.ListView
+    (function () {
+    });
 });
 //# sourceMappingURL=app.js.map

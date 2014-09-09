@@ -7,7 +7,7 @@ $(() => {
             console.log(this.winControl.userRating);
         });
     });
-
+    
     // WinJS.UI.Bindings
     (() => {
         var myBlogsData = {
@@ -28,4 +28,9 @@ $(() => {
         });
         dataBind(); 
     })();
+
+    // WinJS.UI.ListView
+    (() => {
+
+    });
 });
