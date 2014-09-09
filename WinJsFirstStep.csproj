@@ -18,6 +18,12 @@
   </PropertyGroup>
   <ItemGroup>
     <Content Include="css\app.css" />
+    <Content Include="images\fruits\60Banana.png" />
+    <Content Include="images\fruits\60Lemon.png" />
+    <Content Include="images\fruits\60Mint.png" />
+    <Content Include="images\fruits\60Orange.png" />
+    <Content Include="images\fruits\60Strawberry.png" />
+    <Content Include="images\fruits\60Vanilla.png" />
     <Content Include="index.html" />
     <Content Include="js\lib\jquery.js" />
     <Content Include="js\Microsoft.WinJS.3.0\css\ui-dark.css" />

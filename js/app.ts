@@ -1,5 +1,4 @@
 ﻿/// <reference path="typings/tsd.d.ts" />
-declare var Sample: any;
 $(() => {    
     // WinJS.UI.Bindings
     (() => {
@@ -24,15 +23,16 @@ $(() => {
 
     // WinJS.UI.ListView
     (() => {
+        var path = (fileName: string) => './images/fruits/' + fileName;
         var itemArray = [
-            { title: 'Marvelous Mint',       text: 'Gelato', picture: '/images/fruits/60Mint.png' },
-            { title: 'Succulent Strawberry', text: 'Sorbet', picture: '/images/fruits/60Strawberry.png' },
-            { title: 'Banana Blast',         text: 'Low-fat frozen yogurt', picture: '/images/fruits/60Banana.png' },
-            { title: 'Lavish Lemon Ice',     text: 'Sorbet', picture: '/images/fruits/60Lemon.png' },
-            { title: 'Creamy Orange',        text: 'Sorbet', picture: '/images/fruits/60Orange.png' },
-            { title: 'Very Vanilla',         text: 'Ice Cream', picture: '/images/fruits/60Vanilla.png' },
-            { title: 'Banana Blast',         text: 'Low-fat frozen yogurt', picture: '/images/fruits/60Banana.png' },
-            { title: 'Lavish Lemon Ice',     text: 'Sorbet', picture: '/images/fruits/60Lemon.png' }
+            { title: 'Marvelous Mint',       text: 'Gelato',                picture: path('60Mint.png') },
+            { title: 'Succulent Strawberry', text: 'Sorbet',                picture: path('60Strawberry.png')},
+            { title: 'Banana Blast',         text: 'Low-fat frozen yogurt', picture: path('60Banana.png')},
+            { title: 'Lavish Lemon Ice',     text: 'Sorbet',                picture: path('60Lemon.png')},
+            { title: 'Creamy Orange',        text: 'Sorbet',                picture: path('60Orange.png')},
+            { title: 'Very Vanilla',         text: 'Ice Cream',             picture: path('60Vanilla.png')},
+            { title: 'Banana Blast',         text: 'Low-fat frozen yogurt', picture: path('60Banana.png')},
+            { title: 'Lavish Lemon Ice',     text: 'Sorbet',                picture: path('60Lemon.png')}
         ];
 
         var items = [];
