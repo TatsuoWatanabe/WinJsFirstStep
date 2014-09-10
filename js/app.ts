@@ -37,8 +37,8 @@ $(() => {
 
         var items = [];
 
-        // Generate 160 items
-        while (items.length < 160) {
+        // Generate 40 items
+        while (items.length < 40) {
             itemArray.forEach((item) => items.push(item));
         }
 
@@ -46,6 +46,12 @@ $(() => {
             data: new WinJS.Binding.List(items)
         });
     })();
+
+    // WinJS.UI.ListView ajax
+    $.getJSON('data.json', function(json: Array<any>) {
+        var data = json.sort((a, b) => a.index < b.index ? -1 : 1);
+        $("#listViewAjax")[0].winControl.itemDataSource = (new WinJS.Binding.List(data)).dataSource;
+    });
 
     // WinJS.UI.processAll
     WinJS.UI.processAll().done(() => {

@@ -10,8 +10,10 @@
     <script src="js/lib/jquery.js"></script>
     <script src="js/app.js"></script>
     <style>
+        body { overflow-y:auto; } /* vertical scrollable */
         section { margin: 15px; }
         article { margin-top: 1em; }
+        
     </style>
     <link href="css/app.css" rel="stylesheet" />
 </head>
@@ -62,12 +64,39 @@
                  class="win-selectionstylefilled"
                  data-win-control="WinJS.UI.ListView"
                  data-win-options="{
-                    itemDataSource: Sample.ListView.data.dataSource,
-                    itemTemplate  : select('.smallListIconTextTemplate'),
-itemsReorderable: true,
-                    layout        : { type: WinJS.UI.ListLayout }
-                 }"></div>
+                    itemDataSource  : Sample.ListView.data.dataSource,
+                    itemTemplate    : select('.smallListIconTextTemplate'),
+                    itemsReorderable: true,
+                    layout          : { type: WinJS.UI.ListLayout }
+                 }"
+            >
+            </div>
+        </article>
 
+        <article>
+            <h2>WinJS.UI.ListView ajax</h2>
+
+            <!-- Simple template for the ListView instantiation  -->
+            <div class="contentsdataTemplate" data-win-control="WinJS.Binding.Template" style="display: none">
+                <div class="smallListIconTextItem">
+                    <div class="smallListIconTextItem-Detail">
+                        <h6 data-win-bind="textContent: index"></h6>
+                        <h6 data-win-bind="textContent: name"></h6>
+                    </div>
+                </div>
+            </div>
+
+            <!-- The declarative markup necesary for ListView instantiation -->
+            <!-- Call WinJS.UI.processAll() in your initialization code -->
+            <div id="listViewAjax" style="height:150px"
+                 class="win-selectionstylefilled"
+                 data-win-control="WinJS.UI.ListView"
+                 data-win-options="{
+                    itemTemplate    : select('.contentsdataTemplate'),
+                    itemsReorderable: true,
+                    layout          : { type: WinJS.UI.ListLayout }
+                 }">
+            </div>
         </article>
 
     </section>

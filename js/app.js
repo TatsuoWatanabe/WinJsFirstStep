@@ -39,7 +39,7 @@ $(function () {
 
         var items = [];
 
-        while (items.length < 160) {
+        while (items.length < 40) {
             itemArray.forEach(function (item) {
                 return items.push(item);
             });
@@ -49,6 +49,14 @@ $(function () {
             data: new WinJS.Binding.List(items)
         });
     })();
+
+    // WinJS.UI.ListView ajax
+    $.getJSON('data.json', function (json) {
+        var data = json.sort(function (a, b) {
+            return a.index < b.index ? -1 : 1;
+        });
+        $("#listViewAjax")[0].winControl.itemDataSource = (new WinJS.Binding.List(data)).dataSource;
+    });
 
     // WinJS.UI.processAll
     WinJS.UI.processAll().done(function () {
