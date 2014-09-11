@@ -53,7 +53,6 @@ $(() => {
         $("#listViewAjax")[0].winControl.itemDataSource = (new WinJS.Binding.List(data)).dataSource;
     });
 
-
     // WinJS.UI.ToggleSwitch
     var toggleWifi = () => {
         var obj = document.getElementById("wifiToggle").winControl;
