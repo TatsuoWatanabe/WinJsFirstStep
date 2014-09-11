@@ -58,6 +58,16 @@ $(function () {
         $("#listViewAjax")[0].winControl.itemDataSource = (new WinJS.Binding.List(data)).dataSource;
     });
 
+    // WinJS.UI.ToggleSwitch
+    var toggleWifi = function () {
+        var obj = document.getElementById("wifiToggle").winControl;
+        console.log("Wifi toggled. Current status: " + (obj.checked ? "on" : "off"));
+    };
+    WinJS.Utilities.markSupportedForProcessing(toggleWifi);
+    WinJS.Namespace.define('Sample.ToggleSwitch', {
+        toggleWifi: toggleWifi
+    });
+
     // WinJS.UI.processAll
     WinJS.UI.processAll().done(function () {
         // WinJS.UI.Rating
