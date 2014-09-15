@@ -33,6 +33,8 @@
     <Content Include="js\Microsoft.WinJS.3.0\js\en-US\ui.strings.js" />
     <Content Include="js\Microsoft.WinJS.3.0\js\ui.js" />
     <Content Include="js\Microsoft.WinJS.3.0\js\WinJS.js" />
+    <Content Include="pages\samplePageControl.html" />
+    <Content Include="pages\samplePageControl.css" />
     <Content Include="web.config" />
   </ItemGroup>
   <ItemGroup>
