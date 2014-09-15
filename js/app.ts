@@ -71,7 +71,7 @@ $(() => {
         // Render the page control via a call to WinJS.UI.Pages.render. This lets
         // you render a page control by referencing it via url.
         var renderHost = $('.renderingPageControls-renderedControl')[0];
-        WinJS.UI.Pages.render("/pages/samplePageControl.html", renderHost, {
+        WinJS.UI.Pages.render("./pages/samplePageControl.html", renderHost, {
             controlText: "This control created by calling WinJS.UI.Pages.render",
             message    : "Render control"
         }).done();
