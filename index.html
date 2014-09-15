@@ -21,6 +21,21 @@
     <section style="margin:15px">
         <h1>WinJsFirstStep</h1>
 
+        <!-- WinJS.UI.NavBar -->
+        <article>
+            <div id="createNavBar" data-win-control="WinJS.UI.NavBar">
+                <div data-win-control="WinJS.UI.NavBarContainer">
+                    <div data-win-control="WinJS.UI.NavBarCommand" data-win-options="{ label: 'Home', icon: 'url(/pages/navbar/content/images/homeIcon.png)' }"></div>
+                    <div data-win-control="WinJS.UI.NavBarCommand" data-win-options="{ label: 'Favorite', icon: 'favorite' }"></div>
+                    <div data-win-control="WinJS.UI.NavBarCommand" data-win-options="{ label: 'Delete', icon: 'delete' }"></div>
+                    <div data-win-control="WinJS.UI.NavBarCommand" data-win-options="{ label: 'Music', icon: 'audio' }"></div>
+                    <div data-win-control="WinJS.UI.NavBarCommand" data-win-options="{ label: 'Edit', icon: 'edit' }"></div>
+                    <div data-win-control="WinJS.UI.NavBarCommand" data-win-options="{ label: 'Settings', icon: 'settings' }"></div>
+                </div>
+            </div>
+        </article>
+
+        <!-- WinJS.UI.Rating -->
         <article>
             <h2>WinJS.UI.Rating</h2>
             <div id="ratingCtrl"
@@ -29,6 +44,7 @@
             </div>
         </article>
 
+        <!-- WinJS.UI.Bindings -->
         <article>
             <h2>WinJS.UI.Bindings</h2>
             <label><input id="bindColor" placeholder="backgroundColor" /></label>
@@ -43,6 +59,34 @@
             "></a>
         </article>
 
+        <!-- WinJS.UI.ToggleSwitch -->
+        <article>
+            <h2>WinJS.UI.ToggleSwitch</h2>
+            <ul style="list-style-type: none">
+                <li>
+                    <div id="wifiToggle" data-win-control="WinJS.UI.ToggleSwitch"
+                         data-win-options="{title: 'WiFi', checked: true, onchange: Sample.ToggleSwitch.toggleWifi}">
+                    </div>
+                </li>
+                <li>
+                    <div data-win-control="WinJS.UI.ToggleSwitch"
+                         data-win-options="{title: 'GPS'}">
+                    </div>
+                </li>
+                <li>
+                    <div data-win-control="WinJS.UI.ToggleSwitch"
+                         data-win-options="{title: 'Bluetooth', labelOn: '入', labelOff: '切'}">
+                    </div>
+                </li>
+                <li>
+                    <div data-win-control="WinJS.UI.ToggleSwitch"
+                         data-win-options="{title: 'BitLocker', checked: true, disabled: true}">
+                    </div>
+                </li>
+            </ul>
+        </article>
+
+        <!-- WinJS.UI.ListView -->
         <article>
             <h2>WinJS.UI.ListView</h2>
 
@@ -73,6 +117,7 @@
             </div>
         </article>
 
+        <!-- WinJS.UI.ListView ajax -->
         <article>
             <h2>WinJS.UI.ListView ajax</h2>
 
@@ -81,7 +126,7 @@
                 <div class="smallListIconTextItem">
                     <div class="smallListIconTextItem-Detail">
                         <h6 data-win-bind="textContent: index"></h6>
-                        <h6 data-win-bind="textContent: name"></h6>
+                        <h2 data-win-bind="textContent: name"></h2>
                     </div>
                 </div>
             </div>
@@ -99,31 +144,13 @@
             </div>
         </article>
 
-
+        <!-- WinJS.UI.Pages -->
         <article>
-            <h2>WinJS.UI.ToggleSwitch</h2>
-            <ul style="list-style-type: none">
-                <li>
-                    <div id="wifiToggle" data-win-control="WinJS.UI.ToggleSwitch"
-                         data-win-options="{title: 'WiFi', checked: true, onchange: Sample.ToggleSwitch.toggleWifi}">
-                    </div>
-                </li>
-                <li>
-                    <div data-win-control="WinJS.UI.ToggleSwitch"
-                         data-win-options="{title: 'GPS'}">
-                    </div>
-                </li>
-                <li>
-                    <div data-win-control="WinJS.UI.ToggleSwitch" 
-                         data-win-options="{title: 'Bluetooth', labelOn: '入', labelOff: '切'}">
-                    </div>
-                </li>
-                <li>
-                    <div data-win-control="WinJS.UI.ToggleSwitch" 
-                         data-win-options="{title: 'BitLocker', checked: true, disabled: true}">
-                    </div>
-                </li>
-            </ul>
+            <h2>WinJS.UI.Pages</h2>
+            <div class="renderingPageControls-controlHost">
+                <h2>This control is rendered via a call to <span class="code">WinJS.UI.Pages.render</span>, passing the URI of the HTML to load.</h2>
+                <div class="renderingPageControls-renderedControl"></div>
+            </div>
         </article>
 
     </section>

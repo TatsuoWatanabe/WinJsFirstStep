@@ -21,6 +21,20 @@ $(function () {
         dataBind();
     })();
 
+    // WinJS.UI.ToggleSwitch
+    (function () {
+        var toggleWifi = function () {
+            var obj = document.getElementById("wifiToggle").winControl;
+            console.log("Wifi toggled. Current status: " + (obj.checked ? "on" : "off"));
+        };
+
+        // To protect against untrusted code execution, all functions are required to be marked as supported for processing before they can be used inside a data-win-options attribute in HTML markup.
+        WinJS.Utilities.markSupportedForProcessing(toggleWifi);
+        WinJS.Namespace.define('Sample.ToggleSwitch', {
+            toggleWifi: toggleWifi
+        });
+    })();
+
     // WinJS.UI.ListView
     (function () {
         var path = function (fileName) {
@@ -58,15 +72,16 @@ $(function () {
         $("#listViewAjax")[0].winControl.itemDataSource = (new WinJS.Binding.List(data)).dataSource;
     });
 
-    // WinJS.UI.ToggleSwitch
-    var toggleWifi = function () {
-        var obj = document.getElementById("wifiToggle").winControl;
-        console.log("Wifi toggled. Current status: " + (obj.checked ? "on" : "off"));
-    };
-    WinJS.Utilities.markSupportedForProcessing(toggleWifi);
-    WinJS.Namespace.define('Sample.ToggleSwitch', {
-        toggleWifi: toggleWifi
-    });
+    // WinJS.UI.Pages
+    (function () {
+        // Render the page control via a call to WinJS.UI.Pages.render. This lets
+        // you render a page control by referencing it via url.
+        var renderHost = $('.renderingPageControls-renderedControl')[0];
+        WinJS.UI.Pages.render("/pages/pageControl/samplePageControl.html", renderHost, {
+            controlText: "This control created by calling WinJS.UI.Pages.render",
+            message: "Render control"
+        }).done();
+    })();
 
     // WinJS.UI.processAll
     WinJS.UI.processAll().done(function () {
