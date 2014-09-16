@@ -2,23 +2,21 @@
 $(() => {    
     // WinJS.UI.Bindings
     (() => {
-        var myBlogsData = {
+        var myBlogsData = WinJS.Binding.as({
             pageTitle      : "monoe’s blog",
             url            : 'http://blogs.msdn.com/b/osamum',
             description    : 'MS Web技術のよもやま話',
             fontSize       : '30px',
             fontColor      : 'green',
             backgroundColor: 'red' 
-        };
-        var dataBind = () => {
-            WinJS.Binding.processAll($('#myBlogLink')[0], myBlogsData);
-        };
+        });
+
+        WinJS.Binding.processAll($('#myBlogLink')[0], myBlogsData);
+
         $('#bindColor').on('change keyup', function() {
             myBlogsData.backgroundColor = $(this).val();
             console.log(myBlogsData.backgroundColor);
-            dataBind();
         });
-        dataBind(); 
     })();
 
     // WinJS.UI.ToggleSwitch
@@ -71,10 +69,25 @@ $(() => {
         // Render the page control via a call to WinJS.UI.Pages.render. This lets
         // you render a page control by referencing it via url.
         var renderHost = $('.renderingPageControls-renderedControl')[0];
-        WinJS.UI.Pages.render("./pages/samplePageControl.html", renderHost, {
-            controlText: "This control created by calling WinJS.UI.Pages.render",
-            message    : "Render control"
-        }).done();
+        WinJS.UI.Pages.render("./pages/samplePageControl.html", renderHost).done(() => {
+            var bindData = WinJS.Binding.as({
+                controlText: 'This control created by calling WinJS.UI.Pages.render'
+            });
+
+            // Data bind to the child tree to set the control text
+            WinJS.Binding.processAll(renderHost, bindData);
+
+            $(renderHost).find('.samplePageControl-button').on('click', function() {
+                bindData.controlText = 'button clicked.';
+            });
+
+            // Event handler for when the toggle control switches
+            $(renderHost).find('.samplePageControl-toggle').on('click', function() {
+                var toggleControl = this.winControl;
+                bindData.controlText = 'toggle is now ' + toggleControl.checked;
+            });
+
+        });
     })();
 
     // WinJS.UI.processAll
