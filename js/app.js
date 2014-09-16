@@ -80,7 +80,17 @@ $(function () {
         WinJS.UI.Pages.render("./pages/samplePageControl.html", renderHost, {
             controlText: "This control created by calling WinJS.UI.Pages.render",
             message: "Render control"
-        }).done();
+        }).done(function () {
+            $(renderHost).find('.samplePageControl-button').on('click', function () {
+                console.log(this);
+            });
+
+            // Event handler for when the toggle control switches
+            $(renderHost).find('.samplePageControl-toggle').on('click', function () {
+                var toggleControl = this.winControl;
+                console.log(" toggle is now " + toggleControl.checked);
+            });
+        });
     })();
 
     // WinJS.UI.processAll
