@@ -82,7 +82,7 @@ $(() => {
             });
 
             // Event handler for when the toggle control switches
-            $(renderHost).find('.samplePageControl-toggle').on('click', function() {
+            $(renderHost).find('.samplePageControl-toggle').on('click tap', function() {
                 var toggleControl = this.winControl;
                 bindData.controlText = 'toggle is now ' + toggleControl.checked;
             });
