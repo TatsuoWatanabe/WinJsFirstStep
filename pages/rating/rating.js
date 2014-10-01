@@ -1,13 +1,14 @@
 ﻿(function () {
     var currentRating = 0;
 
-    WinJS.UI.Pages.define('/pages/rating/rating.html', {
+    WinJS.UI.Pages.define('pages/rating/rating.html', {
         ready: function (element, options) {
-            var ratingCtrl = $('#ratingCtrl')[0].winControl;
-            ratingCtrl.userRating = currentRating;
+            $('#ratingCtrl')[0].winControl.userRating = currentRating;
 
             $('#ratingCtrl').on('change', function () {
+                var ratingCtrl = this.winControl;
                 currentRating = ratingCtrl.userRating;
+                console.log('changed to ' + currentRating + '.');
                 $('#currentRating').text('current rating is ' + ratingCtrl.userRating);
             }).change();
 
