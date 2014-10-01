@@ -7,9 +7,8 @@
             }).done((result: XMLHttpRequest) => {
                 var json = result.response;
                 var data = (() => {
-                    return json.sort ?
-                        json.sort((a, b) => a.index < b.index ? -1 : 1) :
-                        json;
+                    var jsonObj = json.sort ? json : JSON.parse(json);
+                    return jsonObj.sort((a, b) => a.index < b.index ? -1 : 1);
                 })();
                 var listViewCtrl = WinJS.Utilities.query('#listViewAjax')[0].winControl;
                 listViewCtrl.itemDataSource = (new WinJS.Binding.List(data)).dataSource;
