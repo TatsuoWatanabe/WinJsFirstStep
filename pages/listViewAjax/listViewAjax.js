@@ -6,9 +6,11 @@
                 responseType: 'json'
             }).done(function (result) {
                 var json = result.response;
-                var data = json.sort(function (a, b) {
-                    return a.index < b.index ? -1 : 1;
-                });
+                var data = (function () {
+                    return json.sort ? json.sort(function (a, b) {
+                        return a.index < b.index ? -1 : 1;
+                    }) : json;
+                })();
                 var listViewCtrl = WinJS.Utilities.query('#listViewAjax')[0].winControl;
                 listViewCtrl.itemDataSource = (new WinJS.Binding.List(data)).dataSource;
             });
