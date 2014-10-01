@@ -18,7 +18,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Content Include="css\app.css" />
-    <None Include="data.json" />
     <Content Include="images\fruits\60Banana.png" />
     <Content Include="images\fruits\60Lemon.png" />
     <Content Include="images\fruits\60Mint.png" />
@@ -31,22 +30,40 @@
     <Content Include="js\Microsoft.WinJS.3.0\css\ui-light.css" />
     <Content Include="js\Microsoft.WinJS.3.0\js\base.js" />
     <Content Include="js\Microsoft.WinJS.3.0\js\en-US\ui.strings.js" />
+    <TypeScriptCompile Include="js\index.ts" />
+    <TypeScriptCompile Include="js\navigator.ts" />
     <Content Include="js\Microsoft.WinJS.3.0\js\ui.js" />
     <Content Include="js\Microsoft.WinJS.3.0\js\WinJS.js" />
-    <Content Include="pages\samplePageControl.html" />
-    <Content Include="pages\samplePageControl.css" />
+    <Content Include="pages\hub\basichub.html" />
+    <Content Include="pages\home.html" />
+    <Content Include="pages\listViewAjax\listViewAjax.html" />
+    <Content Include="pages\listView\listView.html" />
+    <Content Include="pages\bindings\bindings.html" />
+    <Content Include="pages\pages\pages.html" />
+    <Content Include="pages\pages\samplePageControl.css" />
+    <Content Include="pages\pages\samplePageControl.html" />
+    <Content Include="pages\rating\rating.html" />
+    <Content Include="pages\toggleSwitch\toggleSwitch.html" />
     <Content Include="web.config" />
+    <TypeScriptCompile Include="pages\bindings\bindings.ts" />
+    <TypeScriptCompile Include="pages\pages\pages.ts" />
+    <TypeScriptCompile Include="pages\rating\rating.ts" />
+    <TypeScriptCompile Include="pages\toggleSwitch\toggleSwitch.ts" />
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Include="js\app.ts" />
     <TypeScriptCompile Include="js\typings\tsd.d.ts" />
     <TypeScriptCompile Include="js\typings\winjs\jquery.d.ts" />
     <TypeScriptCompile Include="js\typings\winjs\winjs.d.ts" />
+    <TypeScriptCompile Include="pages\home.ts" />
+    <TypeScriptCompile Include="pages\hub\basichub.ts" />
+    <TypeScriptCompile Include="pages\listViewAjax\listViewAjax.ts" />
+    <TypeScriptCompile Include="pages\listView\listView.ts" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
     <Content Include="js\Microsoft.WinJS.3.0\fonts\Symbols.ttf" />
     <Content Include="README.md" />
+    <Content Include="pages\listViewAjax\data.json" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
     </None>
@@ -54,6 +71,7 @@
       <DependentUpon>web.config</DependentUpon>
     </None>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

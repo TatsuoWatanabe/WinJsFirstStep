@@ -7,151 +7,30 @@
     <link href="js/Microsoft.WinJS.3.0/css/ui-dark.css" rel="stylesheet" />
     <script src="js/Microsoft.WinJS.3.0/js/base.js"></script>
     <script src="js/Microsoft.WinJS.3.0/js/ui.js"></script>
+    <script src="js/navigator.js"></script>
     <script src="js/lib/jquery.js"></script>
-    <script src="js/app.js"></script>
-    <style>
-        body { overflow-y:auto; } /* vertical scrollable */
-        section { margin: 15px; }
-        article { margin-top: 1em; }
-        
-    </style>
-    <link href="css/app.css" rel="stylesheet" />
+    <script src="js/index.js"></script>
 </head>
 <body>
-    <section style="margin:15px">
-        <h1>WinJsFirstStep</h1>
 
-        <!-- WinJS.UI.NavBar -->
-        <article>
-            <div id="createNavBar" data-win-control="WinJS.UI.NavBar">
-                <div data-win-control="WinJS.UI.NavBarContainer">
-                    <div data-win-control="WinJS.UI.NavBarCommand" data-win-options="{ label: 'Home', icon: 'url(/pages/navbar/content/images/homeIcon.png)' }"></div>
-                    <div data-win-control="WinJS.UI.NavBarCommand" data-win-options="{ label: 'Favorite', icon: 'favorite' }"></div>
-                    <div data-win-control="WinJS.UI.NavBarCommand" data-win-options="{ label: 'Delete', icon: 'delete' }"></div>
-                    <div data-win-control="WinJS.UI.NavBarCommand" data-win-options="{ label: 'Music', icon: 'audio' }"></div>
-                    <div data-win-control="WinJS.UI.NavBarCommand" data-win-options="{ label: 'Edit', icon: 'edit' }"></div>
-                    <div data-win-control="WinJS.UI.NavBarCommand" data-win-options="{ label: 'Settings', icon: 'settings' }"></div>
-                </div>
+    <!-- WinJS.UI.NavBar -->
+    <article>
+        <div id="createNavBar" data-win-control="WinJS.UI.NavBar" data-win-options="{ sticky: true }">
+            <div data-win-control="WinJS.UI.NavBarContainer">
+                <div data-win-control="WinJS.UI.NavBarCommand" data-win-options="{ id: 'cmdFavorite', section:'global',  label: 'Favorite', icon: 'favorite'}"></div>
+                <div data-win-control="WinJS.UI.NavBarCommand" data-win-options="{ id: 'cmdDelete',   label: 'Delete',   icon: 'fourbars' }"></div>
+                <div data-win-control="WinJS.UI.NavBarCommand" data-win-options="{ id: 'cmdMusic',    label: 'Music',    icon: 'audio' }"></div>
+                <div data-win-control="WinJS.UI.NavBarCommand" data-win-options="{ id: 'cmdEdit',     label: 'Edit',     icon: 'edit' }"></div>
+                <div data-win-control="WinJS.UI.NavBarCommand" data-win-options="{ id: 'cmdSettings', label: 'Settings', icon: 'settings' }"></div>
             </div>
-        </article>
+        </div>
+    </article>
 
-        <!-- WinJS.UI.Rating -->
-        <article>
-            <h2>WinJS.UI.Rating</h2>
-            <div id="ratingCtrl"
-                 data-win-control="WinJS.UI.Rating"
-                 data-win-options="{maxRating:10, averageRating:5}">
-            </div>
-        </article>
+    <!-- PageControlNavigator -->
+    <div id="pageHost"
+         data-win-control="Application.PageControlNavigator"
+         data-win-options="{ home: '/pages/home.html' }">
+    </div>
 
-        <!-- WinJS.UI.Bindings -->
-        <article>
-            <h2>WinJS.UI.Bindings</h2>
-            <label><input id="bindColor" placeholder="backgroundColor" /></label>
-            <a id="myBlogLink"
-               data-win-bind="
-                   innerHTML            : pageTitle;
-                   href                 : url;
-                   title                : description;
-                   style.fontSize       : fontSize;
-                   style.color          : fontColor;
-                   style.backgroundColor: backgroundColor;
-            "></a>
-        </article>
-
-        <!-- WinJS.UI.ToggleSwitch -->
-        <article>
-            <h2>WinJS.UI.ToggleSwitch</h2>
-            <ul style="list-style-type: none">
-                <li>
-                    <div id="wifiToggle" data-win-control="WinJS.UI.ToggleSwitch"
-                         data-win-options="{title: 'WiFi', checked: true, onchange: Sample.ToggleSwitch.toggleWifi}">
-                    </div>
-                </li>
-                <li>
-                    <div data-win-control="WinJS.UI.ToggleSwitch"
-                         data-win-options="{title: 'GPS'}">
-                    </div>
-                </li>
-                <li>
-                    <div data-win-control="WinJS.UI.ToggleSwitch"
-                         data-win-options="{title: 'Bluetooth', labelOn: '入', labelOff: '切'}">
-                    </div>
-                </li>
-                <li>
-                    <div data-win-control="WinJS.UI.ToggleSwitch"
-                         data-win-options="{title: 'BitLocker', checked: true, disabled: true}">
-                    </div>
-                </li>
-            </ul>
-        </article>
-
-        <!-- WinJS.UI.ListView -->
-        <article>
-            <h2>WinJS.UI.ListView</h2>
-
-            <!-- Simple template for the ListView instantiation  -->
-            <div class="smallListIconTextTemplate" data-win-control="WinJS.Binding.Template" style="display: none">
-                <div class="smallListIconTextItem">
-                    <img src="#" class="smallListIconTextItem-Image" data-win-bind="src: picture" />
-                    <div class="smallListIconTextItem-Detail">
-                        <h4 data-win-bind="textContent: title"></h4>
-                        <h6 data-win-bind="textContent: text"></h6>
-                        <h6 data-win-bind="textContent: picture"></h6>
-                    </div>
-                </div>
-            </div>
-
-            <!-- The declarative markup necesary for ListView instantiation -->
-            <!-- Call WinJS.UI.processAll() in your initialization code -->
-            <div id="listView"
-                 class="win-selectionstylefilled"
-                 data-win-control="WinJS.UI.ListView"
-                 data-win-options="{
-                    itemDataSource  : Sample.ListView.data.dataSource,
-                    itemTemplate    : select('.smallListIconTextTemplate'),
-                    itemsReorderable: true,
-                    layout          : { type: WinJS.UI.ListLayout }
-                 }"
-            >
-            </div>
-        </article>
-
-        <!-- WinJS.UI.ListView ajax -->
-        <article>
-            <h2>WinJS.UI.ListView ajax</h2>
-
-            <!-- Simple template for the ListView instantiation  -->
-            <div class="contentsdataTemplate" data-win-control="WinJS.Binding.Template" style="display: none">
-                <div class="smallListIconTextItem">
-                    <div class="smallListIconTextItem-Detail">
-                        <h6 data-win-bind="textContent: index"></h6>
-                        <h2 data-win-bind="textContent: name"></h2>
-                    </div>
-                </div>
-            </div>
-
-            <!-- The declarative markup necesary for ListView instantiation -->
-            <!-- Call WinJS.UI.processAll() in your initialization code -->
-            <div id="listViewAjax" style="height:150px"
-                 class="win-selectionstylefilled"
-                 data-win-control="WinJS.UI.ListView"
-                 data-win-options="{
-                    itemTemplate    : select('.contentsdataTemplate'),
-                    itemsReorderable: true,
-                    layout          : { type: WinJS.UI.ListLayout }
-                 }">
-            </div>
-        </article>
-
-        <!-- WinJS.UI.Pages -->
-        <article>
-            <h2>WinJS.UI.Pages</h2>
-            <div class="renderingPageControls-controlHost">
-                <div class="renderingPageControls-renderedControl"></div>
-            </div>
-        </article>
-
-    </section>
 </body>
 </html>

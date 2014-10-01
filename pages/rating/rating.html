@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>WinJS.UI.Rating</title>
+    <script src="rating.js"></script>
+</head>
+<body>
+    <!-- WinJS.UI.Rating -->
+    <div class="fragment" style="margin: 1rem;">
+        <header aria-label="Header content" role="banner">
+            <button data-win-control="WinJS.UI.BackButton"></button>
+            <h1 class="titlearea win-type-ellipsis">
+                <span class="pagetitle">Welcome to Rating</span>
+            </h1>
+        </header>
+        <section aria-label="Main content" role="main">
+            <div id="ratingCtrl"
+                data-win-control="WinJS.UI.Rating"
+                data-win-options="{ maxRating: 10, averageRating: 5 }">
+            </div>
+            <p id="currentRating"></p>
+        </section>
+    </div>
+</body>
+</html>
