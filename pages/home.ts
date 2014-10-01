@@ -1,5 +1,5 @@
 ﻿(function() {
-    WinJS.UI.Pages.define('/pages/home.html', {
+    WinJS.UI.Pages.define('pages/home.html', {
         ready: (element, options) => {
             WinJS.Utilities.query('button.btn-navigate').listen('click', function(eventInfo) {
                 var btn: HTMLButtonElement = eventInfo.target;
