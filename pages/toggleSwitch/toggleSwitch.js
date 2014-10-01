@@ -1,9 +1,9 @@
-﻿(() => {
+﻿(function () {
     var toggleValues = {};
-    
-    var onToggled = (eventInfo) => {
-        var ctrlHost: any = eventInfo.target;
-        var toggle: WinJS.UI.ToggleSwitch = ctrlHost.winControl;
+
+    var onToggled = function (eventInfo) {
+        var ctrlHost = eventInfo.target;
+        var toggle = ctrlHost.winControl;
         toggleValues[toggle.title] = toggle.checked; // Save the value.
         $(ctrlHost).next('p').text(toggle.title + ' Current status: ' + (toggle.checked ? 'on' : 'off'));
     };
@@ -16,12 +16,13 @@
 
     WinJS.UI.Pages.define('pages/toggleSwitch/toggleSwitch.html', {
         ready: function (element, options) {
-            $('#toggleList').find('[data-win-control="WinJS.UI.ToggleSwitch"]').each(function() {
-                var toggle: WinJS.UI.ToggleSwitch = this.winControl;
+            $('#toggleList').find('[data-win-control="WinJS.UI.ToggleSwitch"]').each(function () {
+                var toggle = this.winControl;
                 toggle.checked = toggleValues[toggle.title]; // Load the saved values.
             });
-            
+
             return this;
         }
     });
-})(); 
+})();
+//# sourceMappingURL=toggleSwitch.js.map
