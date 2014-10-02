@@ -1,8 +1,8 @@
 ﻿(function () {
     var myBlogsData = WinJS.Binding.as({
-        html           : "monoe’s blog",
-        href           : 'http://blogs.msdn.com/b/osamum',
-        title          : 'MS Web技術のよもやま話',
+        html           : 'Try WinJS',
+        href           : 'http://try.buildwinjs.com',
+        title          : 'Try WinJS;',
         fontSize       : '30px',
         fontColor      : 'green',
         cursor         : 'pointer',
