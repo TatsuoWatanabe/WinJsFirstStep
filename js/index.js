@@ -11,7 +11,11 @@
 
         navBar.addEventListener('invoked', function (ev) {
             var navbarCommand = ev.detail.navbarCommand;
-            console.log(navbarCommand.label);
+            if (!navbarCommand.location) {
+                var lbl = navbarCommand.label;
+                var page = lbl.charAt(0).toLowerCase() + lbl.slice(1);
+                WinJS.Navigation.navigate('pages/' + page + '/' + page + '.html');
+            }
         });
 
         navBar.show();
