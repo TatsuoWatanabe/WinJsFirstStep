@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <link href="hub.css" rel="stylesheet" />
+    <script src="hub.js"></script>
+</head>
+<body>
+    <div class="fullScreen">
+
+        <!-- app header and backbutton-->
+        <div id="appHeader">
+            <button data-win-control="WinJS.UI.BackButton"></button>
+            <h1>Welcome to Hub</h1>
+        </div>
+
+        <!-- Template for ListView in section 2 -->
+        <div class="smallListIconTextTemplate" data-win-control="WinJS.Binding.Template">
+            <div class="smallListIconTextItem">
+                <img src="#" class="smallListIconTextItem-Image" data-win-bind="src: picture" />
+                <div class="smallListIconTextItem-Detail">
+                    <h4 data-win-bind="textContent: title"></h4>
+                    <h6 data-win-bind="textContent: text"></h6>
+                </div>
+            </div>
+        </div>
+
+        <!-- Hub Control -->
+        <div data-win-control="WinJS.UI.Hub">
+            <div class="section1" data-win-control="WinJS.UI.HubSection" data-win-options="{header: 'Images', isHeaderStatic: true}">
+                <div class="imagesFlexBox">
+                    <img class="imageItem" src="/pages/hub/images/circle_image1.jpg" />
+                    <img class="imageItem" src="/pages/hub/images/circle_image3.jpg" />
+                    <img class="imageItem" src="/pages/hub/images/circle_image2.jpg" />
+                    <img class="imageItem" src="/pages/hub/images/circle_image1.jpg" />
+                    <img class="imageItem" src="/pages/hub/images/circle_image3.jpg" />
+                    <img class="imageItem" src="/pages/hub/images/circle_image2.jpg" />
+                    <img class="imageItem" src="/pages/hub/images/circle_image1.jpg" />
+                    <img class="imageItem" src="/pages/hub/images/circle_image3.jpg" />
+                    <img class="imageItem" src="/pages/hub/images/circle_image2.jpg" />
+                </div>
+            </div>
+            <div id="list" class="section2" data-win-control="WinJS.UI.HubSection" data-win-options="{header: 'ListView', isHeaderStatic: true}">
+                <div id="listView"
+                     class="win-selectionstylefilled"
+                     data-win-control="WinJS.UI.ListView"
+                     data-win-options="{
+                        itemDataSource: select('.pagecontrol').winControl.myData.dataSource,
+                        itemTemplate: select('.smallListIconTextTemplate'),
+                        selectionMode: 'none',
+                        layout: { type: WinJS.UI.ListLayout},
+                        tapBehavior: 'none',
+                        swipeBehavior: 'none'
+                     }
+                ">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+</html>

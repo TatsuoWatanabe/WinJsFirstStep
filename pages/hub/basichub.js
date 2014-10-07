@@ -1,4 +1,4 @@
-﻿(() => {
+﻿(function () {
     var myData = new WinJS.Binding.List([
         { title: "Fire Hydrant", text: "Red", picture: "/pages/hub/images/circle_list1.jpg" },
         { title: "Fire Hydrant", text: "Yellow", picture: "/pages/hub/images/circle_list2.jpg" },
@@ -21,3 +21,4 @@
         }
     });
 })();
+//# sourceMappingURL=basichub.js.map

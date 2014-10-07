@@ -37,8 +37,18 @@
     <Content Include="js\navigator.js" />
     <Content Include="pages\bindings\bindings.js" />
     <Content Include="pages\home.js" />
-    <Content Include="pages\hub\basichub.html" />
+    <Content Include="pages\hub\hub.css" />
+    <Content Include="pages\hub\hub.html" />
     <Content Include="pages\home.html" />
+    <Content Include="pages\hub\images\circle_image1.jpg" />
+    <Content Include="pages\hub\images\circle_image2.jpg" />
+    <Content Include="pages\hub\images\circle_image3.jpg" />
+    <Content Include="pages\hub\images\circle_list1.jpg" />
+    <Content Include="pages\hub\images\circle_list2.jpg" />
+    <Content Include="pages\hub\images\circle_list3.jpg" />
+    <Content Include="pages\hub\images\circle_list4.jpg" />
+    <Content Include="pages\hub\images\circle_list5.jpg" />
+    <Content Include="pages\hub\images\circle_list6.jpg" />
     <Content Include="pages\listViewAjax\listViewAjax.html" />
     <Content Include="pages\listViewAjax\listViewAjax.js" />
     <Content Include="pages\listView\listView.html" />
@@ -63,7 +73,7 @@
     <TypeScriptCompile Include="js\typings\winjs\jquery.d.ts" />
     <TypeScriptCompile Include="js\typings\winjs\winjs.d.ts" />
     <TypeScriptCompile Include="pages\home.ts" />
-    <TypeScriptCompile Include="pages\hub\basichub.ts" />
+    <TypeScriptCompile Include="pages\hub\hub.ts" />
     <TypeScriptCompile Include="pages\listViewAjax\listViewAjax.ts" />
     <TypeScriptCompile Include="pages\listView\listView.ts" />
   </ItemGroup>
