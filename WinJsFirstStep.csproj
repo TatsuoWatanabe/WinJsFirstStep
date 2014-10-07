@@ -40,6 +40,7 @@
     <Content Include="pages\hub\hub.css" />
     <Content Include="pages\hub\hub.html" />
     <Content Include="pages\home.html" />
+    <Content Include="pages\hub\hub.js" />
     <Content Include="pages\hub\images\circle_image1.jpg" />
     <Content Include="pages\hub\images\circle_image2.jpg" />
     <Content Include="pages\hub\images\circle_image3.jpg" />
