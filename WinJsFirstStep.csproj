@@ -17,12 +17,12 @@
     <IISExpressUseClassicPipelineMode />
   </PropertyGroup>
   <ItemGroup>
-    <Content Include="images\fruits\60Banana.png" />
-    <Content Include="images\fruits\60Lemon.png" />
-    <Content Include="images\fruits\60Mint.png" />
-    <Content Include="images\fruits\60Orange.png" />
-    <Content Include="images\fruits\60Strawberry.png" />
-    <Content Include="images\fruits\60Vanilla.png" />
+    <Content Include="pages\listView\images\fruits\60Banana.png" />
+    <Content Include="pages\listView\images\fruits\60Lemon.png" />
+    <Content Include="pages\listView\images\fruits\60Mint.png" />
+    <Content Include="pages\listView\images\fruits\60Orange.png" />
+    <Content Include="pages\listView\images\fruits\60Strawberry.png" />
+    <Content Include="pages\listView\images\fruits\60Vanilla.png" />
     <Content Include="index.html" />
     <Content Include="js\index.js" />
     <Content Include="js\lib\jquery.js" />
