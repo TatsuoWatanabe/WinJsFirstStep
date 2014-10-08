@@ -89,4 +89,39 @@
         display: inline;
     }
 
+/*styles when app is in the portrait mode*/
+@media all and (min-height: 1280px) {
+    .section2.win-hub-section {
+        width: 292px;
+        overflow: hidden;
+    }
+
+    /*change the width of the form control to cover only one input box*/
+    .section4.win-hub-section {
+        width: 300px;
+    }
+
+}
+
+/*styles for larger screens*/
+@media (min-width: 1920px) {
+    .section2.win-hub-section {
+        width: 292px;
+        overflow: hidden;
+    }
+
+    /*change the width of the form control to cover only one input box*/
+    .section4.win-hub-section {
+        width: 300px;
+    }
+
+    /*layout form controls vertically*/
+    /*Two column container for section3*/
+    .twoColumnFormContainer {
+        display: -ms-grid;
+        -ms-grid-columns: 50% 50%;
+        min-width: 290px;
+        max-width: 300px;
+    }
+}
 
