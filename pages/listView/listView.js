@@ -1,7 +1,7 @@
 ﻿(function () {
     var dataSource = (function () {
         var path = function (fileName) {
-            return 'images/fruits/' + fileName;
+            return 'pages/listView/images/fruits/' + fileName;
         };
         var itemArray = [
             { title: 'Marvelous Mint', text: 'Gelato', picture: path('60Mint.png') },
